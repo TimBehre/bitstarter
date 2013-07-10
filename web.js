@@ -33,7 +33,7 @@ fs.readFile(filename, "binary", function(err, file) {
       response.end();
 
 
-    });
+    });}
 
 
 
