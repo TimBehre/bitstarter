@@ -2,8 +2,8 @@ var http = require("http"),
 url = require("url"),
 path = require("path"),
 fs = require("fs")
-port = process.argv[2] || 5000;
-    
+
+
 http.createServer(function(request, response) {
 
   var uri = url.parse(request.url).pathname
@@ -26,7 +26,7 @@ http.createServer(function(request, response) {
         response.end();
         return;
       }
-//test
+
       response.writeHead(200);
       response.write(file, "binary");
       response.end();
