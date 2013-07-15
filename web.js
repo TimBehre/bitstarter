@@ -2,7 +2,7 @@ var http = require("http"),
 url = require("url"),
 path = require("path"),
 fs = require("fs")
-
+var  port = process.env.PORT || 5000;
 
 http.createServer(function(request, response) {
 
@@ -12,7 +12,7 @@ http.createServer(function(request, response) {
   path.exists(filename, function(exists) {
     if(!exists) {
       response.writeHead(404, {"Content-Type": "text/plain"});
-      response.write("404 Not Found\n");
+      response.write("404 Not Found Was machst Du da????\n");
       response.end();
       return;
     }
@@ -33,5 +33,6 @@ http.createServer(function(request, response) {
     });
   });
 }).listen(parseInt(port, 10));
+
 
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
